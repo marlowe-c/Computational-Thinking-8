@@ -2,6 +2,7 @@ import turtle
 
 t = turtle.Turtle()
 
+#Color of Mouse & Coordinate Starts At
 t.color("cyan")
 t.goto(100, 0)
 
@@ -12,6 +13,7 @@ for i in range (148):
     t.color("cyan")
 turtle.Screen().bgcolor("dark blue")
 
+#Penup - Mouse moves to coordinate
 t.penup()
 t.goto(-180, -150)
 t.pendown()
@@ -21,6 +23,7 @@ for i in range (92):
     t.left(45 + 1)
     t.color("white")
 
+#Penup - Mouse moves to coordinate
 t.penup()
 t.goto(-180, 170)
 t.pendown()
