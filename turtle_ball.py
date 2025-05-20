@@ -25,26 +25,48 @@ window = turtle.Screen()
 window.tracer(0)
 
 # Section 2: Setup
-s1 = create_sprite("crush",0,-50)
-s2 = create_sprite("vball",-50,150)
-set_background("court")
+s1 = create_sprite("crush (1) (1)",0,-120)
+s2 = create_sprite("vball (1)",-50,150)
+set_background("court (1)")
 
-set_image(s1,"crush2")
 s1.setheading(90)
 def move_up():
 	s1.setheading(90)
 	s1.forward(15)
 
 # Section 3: Controls
+def Left():
+	s1.setheading(180)
+	s1.forward(10)
+def Right():
+	s1.setheading(0)
+	s1.forward(10)
 window.onkeypress(Left, "a")
 window.onkeypress(Right, "d")
+
 
 # Section 4: Game Loop
 window.listen()
 timer = 0
+score = 0
 while True:
 	time.sleep(0.1)
 	timer += 1  
+	s2.setheading(270)
+	s2.forward(8)
+	if s2.ycor() < -300:
+		s2.goto(random.randint(-200,200),100) 
+		s2.showturtle()
+
+	if get_distance (s1,s2) < 50:
+		score += 1
+		s2.goto(random.randint(-50,50),100) 
+
+
+	if score == 10 :
+		s1.write("GAME OVER",font = ("Arial", 40, "normal"))
+		break
+
 	 
     
  	# TODO - code for automatic actions
@@ -56,8 +78,3 @@ while True:
 
 	window.update()
 
-	# if :
-	# 	break
-	
-
-print("Game Over")

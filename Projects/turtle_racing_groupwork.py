@@ -4,7 +4,7 @@ import turtle, time, random
 def set_background(image_filename):
 	screen = turtle.Screen()
 	try:
-    	screen.bgpic(f"/workspaces/Computational-Thinking-8/Backgrounds/{image_filename}.png")
+		screen.bgpic(f"/workspaces/Computational-Thinking-8/Backgrounds/{image_filename}.png")
 	except:
     	screen.bgpic(f"/workspaces/Computational-Thinking-8/Backgrounds/{image_filename}.gif")
 
